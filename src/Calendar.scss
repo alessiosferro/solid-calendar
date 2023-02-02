@@ -1,0 +1,62 @@
+* {
+  box-sizing: border-box !important;
+}
+
+.solid-calendar {
+  display: inline-block;
+  background-color: white;
+  color: black;
+  padding: 10px;
+  border: 1px solid black;
+  font-family: Arial, sans-serif;
+
+  &__days-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__month {
+    display: grid;
+    grid-template-rows: repeat(6, 40px);
+    grid-template-columns: repeat(7, 40px);
+    gap: 8px;
+  }
+
+  &__day {
+    all: unset;
+    cursor: pointer;
+    height: 40px;
+    border-radius: 50%;
+
+    &--today {
+      background-color: lightslategray;
+    }
+
+    &--selected {
+      background-color: dodgerblue;
+    }
+
+    &--today,
+    &--selected {
+      color: white;
+    }
+    
+    &:not(&--today, &--selected):hover {
+      background-color: lightgray;
+    }
+
+    &:focus {
+      border: 2px solid dodgerblue;
+    }
+  }
+
+  &__header-day,
+  &__day {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+  }
+}
